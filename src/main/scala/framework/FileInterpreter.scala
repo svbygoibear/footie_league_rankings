@@ -29,6 +29,6 @@ object FileInterpreter {
   // Creates a team object from a string
   def createTeam(section: String): Team = {
     val regex(name, goals) = section
-    Team(name, goals.toInt)
+    Team(name trim, goals.toInt)
   }
 }

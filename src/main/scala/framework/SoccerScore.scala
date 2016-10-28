@@ -2,6 +2,7 @@ package framework
 
 /**
   * Created by Simone van Buuren on 2016/10/28.
+  * Usage: Defines what the outcome is for a match - to determine later what the rankings of a team is.
   */
 
 // Defines scoring and comparing scores (their integer values) as well as their outcomes as objects.

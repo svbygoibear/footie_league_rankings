@@ -56,9 +56,6 @@ As seen here, the league results (or output) is formatted from the team with the
 5. Grouches, 0 pts
 ```
 
-##Installation
-ToDo
-
 ##Contributors
 Feel free to pop me a message or flag an issue if you come across it - I'll see what I can do about it.
 
