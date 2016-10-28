@@ -5,5 +5,5 @@ package framework
   */
 
 class FileInterpreter {
-
+  val regex = "([\\w\\s]+[\\D])([\\d]+)".r
 }
