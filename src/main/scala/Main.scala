@@ -5,4 +5,6 @@ import akka.actor.ActorSystem
   * Usage: Main execution/command line application.
   */
 
-object Main extends App { }
+object Main extends App {
+
+}

@@ -5,4 +5,6 @@ import org.scalatest.FlatSpec
   * Usage: FlatSpec test for automated tests.
   */
 
-class ScoreCalcSpec extends FlatSpec { }
+class ScoreCalcSpec extends FlatSpec {
+
+}
