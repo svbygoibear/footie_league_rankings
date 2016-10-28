@@ -7,4 +7,4 @@ package framework
 // Defines some of the base models/ case classes used to define incoming data.
 
 case class Team(name: String, goals: Int)
-case class Match(t1: Team, t2: Team)
+case class Match(teams: Seq[Team])
