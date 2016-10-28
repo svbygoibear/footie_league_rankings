@@ -16,4 +16,9 @@ object ScoreCalc {
     }
   }
 
+  // Seq(LeagueRank, LeagueTotal)
+  def getLeagueResults() = {}
+
+
+
 }
