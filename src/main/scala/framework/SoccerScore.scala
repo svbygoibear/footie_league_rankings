@@ -4,6 +4,7 @@ package framework
   * Created by Simone van Buuren on 2016/10/28.
   */
 
+// Defines scoring and comparing scores (their integer values) as well as their outcomes as objects.
 sealed class SoccerScore(val points: Int) extends Ordered[SoccerScore] {
   def compare(that: SoccerScore) = points.compare(that.points)
 }
