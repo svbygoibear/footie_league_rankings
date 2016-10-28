@@ -5,7 +5,7 @@ Create a command-line application that will calculate the ranking table for a so
 <br>
 - [ ] Reads in results from a text file.
 <br>
-- [ ] Generates results per team based on league data.
+- [x] Generates results per team based on league data.
 <br>
 - [ ] Ranks results based on winners
 <br>
