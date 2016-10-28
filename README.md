@@ -3,13 +3,13 @@
 #Synopsis
 Create a command-line application that will calculate the ranking table for a soccer league.
 <br>
-- [] Reads in results from a text file.
+- [ ] Reads in results from a text file.
 <br>
-- [] Generates results per team based on league data.
+- [ ] Generates results per team based on league data.
 <br>
-- [] Ranks results based on winners
+- [ ] Ranks results based on winners
 <br>
-- [] Handle tied outcomes
+- [ ] Handle tied outcomes
 
 ##Code Example
 ###Input/Output
