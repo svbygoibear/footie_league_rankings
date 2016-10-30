@@ -9,3 +9,4 @@ package framework
 case class Team(name: String, goals: Int)
 case class Match(teams: Seq[Team])
 case class MatchRank(team: Team, score: SoccerScore)
+case class TeamResult(position: Int, name: String, finalScore: Int)

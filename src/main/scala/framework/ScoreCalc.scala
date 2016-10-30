@@ -21,7 +21,7 @@ object ScoreCalc {
     leagueResults.groupBy(matchResult => matchResult.team.name).toList.map(res => (res._1, res._2.map(_.score.points).sum))
 
 
-  def getLeagueResults() = {
-
+  def getLeagueResults(): List[TeamResult] = {
+    null
   }
 }
