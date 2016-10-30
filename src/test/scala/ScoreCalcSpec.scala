@@ -33,6 +33,6 @@ class ScoreCalcSpec extends FlatSpec {
   "The Tarantulas" should "gets 6 points" in {
     val testLeague = Seq(MatchRank("Tarantulas", WinScore), MatchRank("Tarantulas", WinScore), MatchRank("Tarantulas", LoseScore))
     val res = groupLeagueResults(testLeague)
-    assert(res.head._2 == 6)
+    assert(res.head._1 == 6)
   }
 }
