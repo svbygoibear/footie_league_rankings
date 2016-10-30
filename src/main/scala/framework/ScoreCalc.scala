@@ -18,10 +18,16 @@ object ScoreCalc {
 
   // Groups the results from a team together and calculates their score from the league results
   def groupLeagueResults(leagueResults: Seq[MatchRank]): List[(String, Int)] =
-    leagueResults.groupBy(matchResult => matchResult.team.name).toList.map(res => (res._1, res._2.map(_.score.points).sum))
+    leagueResults.groupBy(matchResult => matchResult.team).toList.map(res => (res._1, res._2.map(_.score.points).sum))
 
 
-  def getLeagueResults(): List[TeamResult] = {
+  def getLeagueResults(matches: List[Match]): List[TeamResult] = {
+    val test = matches.flatMap { singleMatch =>
+      calcRegularMatchResult(singleMatch).map { singleRes =>
+        MatchRank(singleRes._1, singleRes._2)
+      }
+    }
+    test
     null
   }
 }

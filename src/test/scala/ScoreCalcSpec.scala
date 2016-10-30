@@ -28,4 +28,11 @@ class ScoreCalcSpec extends FlatSpec {
     val res = calcRegularMatchResult(testMatch)
     assert(res("Tarantulas") == LoseScore)
   }
+
+  // Testing to see if grouping method works
+  "The Tarantulas" should "gets 6 points" in {
+    val testLeague = Seq(MatchRank("Tarantulas", WinScore), MatchRank("Tarantulas", WinScore), MatchRank("Tarantulas", LoseScore))
+    val res = groupLeagueResults(testLeague)
+    assert(res.head._2 == 6)
+  }
 }
