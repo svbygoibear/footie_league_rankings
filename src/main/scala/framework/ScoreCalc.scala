@@ -16,18 +16,27 @@ object ScoreCalc {
     }
   }
 
-  // Groups the results from a team together and calculates their score from the league results
-  def groupLeagueResults(leagueResults: Seq[MatchRank]): List[(String, Int)] =
-    leagueResults.groupBy(matchResult => matchResult.team).toList.map(res => (res._1, res._2.map(_.score.points).sum))
+//  // Groups the results from a team together and calculates their score from the league results
+  //  def groupLeagueResults(leagueResults: Seq[MatchRank]): List[(String, Int)] =
+  //    leagueResults.groupBy(matchResult => matchResult.team).toList.map(res => (res._1, res._2.map(_.score.points).sum))
 
+   //Groups the results from teams with the same results together and calculates their score from the league results
+    def groupLeagueResults(leagueResults: Seq[MatchRank]): List[(Int, List[String])] =
+      leagueResults.groupBy(matchResult => matchResult.team).toList.map(res => (res._1, res._2.map(_.score.points).sum)).groupBy(_._2).map(res => (res._1, res._2.map(_._1))).toList
 
+  // Calculates the league results with the current place/position of a team based on their results
   def getLeagueResults(matches: List[Match]): List[TeamResult] = {
-    val test = matches.flatMap { singleMatch =>
+    val matchResults = matches.flatMap { singleMatch =>
       calcRegularMatchResult(singleMatch).map { singleRes =>
         MatchRank(singleRes._1, singleRes._2)
       }
     }
-    test
-    null
+    val groupedResults = groupLeagueResults(matchResults).sortBy(_._1)
+    val fin = groupedResults.zipWithIndex.flatMap{ scoreGroup =>
+      scoreGroup._1._2.map{ teamRes =>
+        TeamResult(scoreGroup._2, teamRes, scoreGroup._1._1)
+      }
+    }
+    fin
   }
 }
