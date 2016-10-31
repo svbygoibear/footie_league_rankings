@@ -33,7 +33,6 @@ object ScoreCalc {
   // Changed this method to a map as to use fold |+| operator already built in (do not have to write own semigroup with append functionality)
   def getLeagueResults2(matches: Map[String, Int]): List[TeamResult] = {
     val toMatchRanks = matches.map(singleMatch => MatchRank(singleMatch._1, singleMatch._2)).toSeq
-    val groupResults = groupLeagueResults(toMatchRanks).sortBy(_._1).reverse.zipWithIndex.flatMap(res => res._1._2.map(team => TeamResult(res._2, team, res._1._1)))
-    groupResults
+    groupLeagueResults(toMatchRanks).sortBy(_._1).reverse.zipWithIndex.flatMap(res => res._1._2.map(team => TeamResult(res._2, team, res._1._1)))
   }
 }

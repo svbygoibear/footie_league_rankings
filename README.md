@@ -57,7 +57,8 @@ import framework.framework.Models._
 val res1 = Match(Seq(Team("Lions", 3), Team("Snake", 3)))
 val res2 = Match(Seq(Team("Lions", 3), Team("Snake", 1)))
 val res3 = Match(Seq(Team("Lions", 0), Team("Tarantulas", 1)))
-val matches: List[Match] = List(res1, res2, res3) // generate a list of matches from all the above match instances
+// generate a list of matches from all the above match instances
+val matches: List[Match] = List(res1, res2, res3) 
 
 val res = getLeagueResults(matches) // returns a list of team results
 ```
