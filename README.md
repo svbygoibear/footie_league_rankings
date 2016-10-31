@@ -3,13 +3,13 @@
 #Synopsis
 Create a command-line application that will calculate the ranking table for a soccer league.
 <br>
-- [ ] Reads in results from a text file.
+- [x] Reads in results from a text file.
 <br>
 - [x] Generates results per team based on league data.
 <br>
-- [ ] Ranks results based on winners
+- [x] Ranks results based on winners
 <br>
-- [ ] Handle tied outcomes
+- [x] Handle tied outcomes
 
 ##Code Example
 ###Input/Output
@@ -39,10 +39,35 @@ Lions 4, Grouches 0
 ```
 
 ###Code Snippet
-Todo:
+To read a file and get match objects, use the following:
 
 ```javascript
-Todo
+import framework.framework.FileInterpreter._
+
+val inputString = "Lions 3, Snakes 3" // this will be the line you get from an input file
+val currentMatch = createMatch(inputString) // returns a match object
+```
+
+To generate results per team based on league data, use and import the following:
+
+```javascript
+import framework.framework.ScoreCalc._
+import framework.framework.Models._
+
+val res1 = Match(Seq(Team("Lions", 3), Team("Snake", 3)))
+val res2 = Match(Seq(Team("Lions", 3), Team("Snake", 1)))
+val res3 = Match(Seq(Team("Lions", 0), Team("Tarantulas", 1)))
+val matches: List[Match] = List(res1, res2, res3) // generate a list of matches from all the above match instances
+
+val res = getLeagueResults(matches) // returns a list of team results
+```
+
+Then, to print out the result:
+
+```javascript
+import framework.presentation.LogPrinter._
+
+printLeagueResults(res) // prints out all the results
 ```
 
 ###Expected Output

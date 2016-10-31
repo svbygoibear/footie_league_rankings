@@ -1,6 +1,5 @@
 package framework
 
-import scala.annotation.tailrec
 import scala.util.matching.Regex
 import scalaz._
 import Scalaz._
@@ -18,10 +17,9 @@ object FileInterpreter {
   def createMatch(line: String): Match = {
     val teams = line.split(',') toList
 
-    @tailrec
-    def loop(teams: List[String], tSeq: Seq[Team]): Match = teams match {
-      case nil => Match(tSeq)
-      case head => loop(teams.tail, tSeq :+ createTeam(teams.head))
+    def loop(teams: List[String], tSeq: Seq[Team]): Match = teams.isEmpty match {
+      case true => Match(tSeq)
+      case false => loop(teams.tail, tSeq :+ createTeam(teams.head.trim))
     }
     loop(teams, Seq())
   }
